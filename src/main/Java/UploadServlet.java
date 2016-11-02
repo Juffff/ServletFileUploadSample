@@ -13,7 +13,7 @@ import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
-@WebServlet("/upload")
+@WebServlet("")
 public class UploadServlet extends HttpServlet {
 
     private boolean isMultipart;
@@ -32,6 +32,12 @@ public class UploadServlet extends HttpServlet {
             out.println("Need multipart transfer type! File not uploaded!");
             return;
         }
+
+        File dir = new File("Uploads");
+        if(!dir.exists()){
+            dir.mkdir();
+        }
+
         DiskFileItemFactory factory = new DiskFileItemFactory();
 
         // maximum size that will be stored in memory
@@ -71,7 +77,7 @@ public class UploadServlet extends HttpServlet {
                     long sizeInBytes = fi.getSize();
 
                     // Write the file
-                    file = new File(fileName);
+                    file = new File(dir.getAbsolutePath()+"/"+fileName);
                     System.out.println(file.getAbsolutePath());
                     fi.write(file);
                     out.println("Uploaded file: " + fileName);

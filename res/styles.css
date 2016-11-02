@@ -1,6 +1,6 @@
-h2{color:red;}
+h2{color:blue;}
 
-#button{
+.btn {
 
     background-color:#44c767;
     -moz-border-radius:28px;
@@ -16,11 +16,21 @@ h2{color:red;}
     text-decoration:none;
     text-shadow:0px 1px 0px #2f6627;
 }
-#button:hover {
-    background-color:#5cbf2a;
+.btn:hover {
+    background-color:greenyellow;
 }
-#button:active {
+.btn:active {
     position:relative;
     top:1px;
 }
 
+#buttonJQ{
+
+    background-color: lightcoral;
+    border:1px solid deeppink;
+}
+
+
+#buttonJQ:hover {
+    background-color:darkred;
+}

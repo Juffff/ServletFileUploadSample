@@ -53,7 +53,7 @@
         </configuration>
       </plugin>
     </plugins>
-
+ <!-- <directory>/user/local/apache-tomcat-8.5.6/webapps/ROOT/</directory>-->
   </build>
 
 
